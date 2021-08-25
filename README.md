@@ -1,13 +1,11 @@
-# buddyCheckoutKata
+# Checkout with Special Offers 🛍️🛒
 
 Implement the code for a checkout system that handles pricing schemes such as "pineapples cost 50, three pineapples cost 130."
 
 Implement the code for a supermarket checkout that calculates the total price of a number of items. In a normal supermarket, things are identified using Stock Keeping Units, or SKUs. In our store, we’ll use individual letters of the alphabet (A, B, C, and so on). Our goods are priced individually. In addition, some items are multi-priced: buy n of them, and they’ll cost you y pence. For example, item A might cost 50 individually, but this week we have a special offer: buy three As and they’ll cost you 130. In fact the prices are:
 
-
-
 | SKU Unit | Unit Price | Special Offer |
-|----------|------------|---------------|
+|-|-|--|
 | A        | 50         | 3 for 130     |
 | B        | 30         | 2 for 45      |
 | C        | 20         |               |
