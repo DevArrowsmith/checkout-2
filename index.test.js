@@ -70,4 +70,20 @@ describe("Checkout", () => {
         //Assert
         expect(result).toBe(expectedPrice);
     })
+
+    it("Scans four of product A and returns the correct total price", () => {
+        //Arrange
+        const productIdentifierA = "A";
+        const expectedPrice = 180;
+
+        //Act
+        testCheckout.scan(productIdentifierA);
+        testCheckout.scan(productIdentifierA);
+        testCheckout.scan(productIdentifierA);
+        testCheckout.scan(productIdentifierA);
+        const result = testCheckout.checkout();
+
+        //Assert
+        expect(result).toBe(expectedPrice);
+    })
 });
