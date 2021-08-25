@@ -1,0 +1,22 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "Implement the code for a checkout system that handles pricing schemes such as \"pineapples cost 50, three pineapples cost 130.\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charlie-wild/buddyCheckoutKata.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/charlie-wild/buddyCheckoutKata/issues"
+  },
+  "homepage": "https://github.com/charlie-wild/buddyCheckoutKata#readme",
+  "dependencies": {
+    "jest": "^27.0.6"
+  }
+}
