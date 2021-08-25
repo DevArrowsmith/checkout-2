@@ -86,4 +86,45 @@ describe("Checkout", () => {
         //Assert
         expect(result).toBe(expectedPrice);
     })
+
+    it("Scans seven of product A, five of product B, five of product C and five of product D, and returns the correct sale price.", () => {
+        //Arrange
+        const productIdentifierA = "A";
+        const productIdentifierB = "B";
+        const productIdentifierC = "C";
+        const productIdentifierD = "D";
+        const expectedPrice = 605;
+
+        //Act
+        testCheckout.scan(productIdentifierA);
+        testCheckout.scan(productIdentifierA);
+        testCheckout.scan(productIdentifierA);
+        testCheckout.scan(productIdentifierA);
+        testCheckout.scan(productIdentifierA);
+        testCheckout.scan(productIdentifierA);
+        testCheckout.scan(productIdentifierA);
+
+        testCheckout.scan(productIdentifierB);
+        testCheckout.scan(productIdentifierB);
+        testCheckout.scan(productIdentifierB);
+        testCheckout.scan(productIdentifierB);
+        testCheckout.scan(productIdentifierB);
+
+        testCheckout.scan(productIdentifierC);
+        testCheckout.scan(productIdentifierC);
+        testCheckout.scan(productIdentifierC);
+        testCheckout.scan(productIdentifierC);
+        testCheckout.scan(productIdentifierC);
+
+        testCheckout.scan(productIdentifierD);
+        testCheckout.scan(productIdentifierD);
+        testCheckout.scan(productIdentifierD);
+        testCheckout.scan(productIdentifierD);
+        testCheckout.scan(productIdentifierD);
+
+        const result = testCheckout.checkout();
+
+        //Assert
+        expect(result).toBe(expectedPrice);
+    })
 });
