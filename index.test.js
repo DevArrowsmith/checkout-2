@@ -1,14 +1,12 @@
 const Checkout = require("./index");
+const prices = require("./prices");
 
 describe("Checkout", () => {
 
     let testCheckout;
 
     beforeEach(() => {
-        const productIndex = {
-            A: 50,
-        }
-        testCheckout = new Checkout(productIndex);
+        testCheckout = new Checkout(prices);
     })
 
     it("Takes a product identifier and returns that product's value", () => {
@@ -36,6 +34,5 @@ describe("Checkout", () => {
 
         //Assert
         expect(result).toBe(expectedPrice);
-
     })
 });

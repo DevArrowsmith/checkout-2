@@ -1,6 +1,6 @@
 class Checkout {
-    constructor(productIndex) {
-        this.productIndex = productIndex;
+    constructor(prices) {
+        this.prices = prices;
         this.basket = {};
     }
 
@@ -13,7 +13,7 @@ class Checkout {
     checkout () {
         let totalPrice = 0;
         for (const productIdentifier in this.basket) {
-            totalPrice += this.productIndex[productIdentifier] * this.basket[productIdentifier];
+            totalPrice += this.prices[productIdentifier] * this.basket[productIdentifier];
         };
         return totalPrice;
     }
