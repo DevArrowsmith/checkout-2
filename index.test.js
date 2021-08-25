@@ -1,12 +1,13 @@
 const Checkout = require("./index");
 const prices = require("./prices");
+const specialOffers = require("./specialOffers");
 
 describe("Checkout", () => {
 
     let testCheckout;
 
     beforeEach(() => {
-        testCheckout = new Checkout(prices);
+        testCheckout = new Checkout(prices, specialOffers);
     })
 
     it("Takes a product identifier and returns that product's value", () => {
@@ -49,6 +50,21 @@ describe("Checkout", () => {
         testCheckout.scan(productIdentifierB);
         testCheckout.scan(productIdentifierC);
         testCheckout.scan(productIdentifierD);
+        const result = testCheckout.checkout();
+
+        //Assert
+        expect(result).toBe(expectedPrice);
+    })
+
+    it("Scans three of product A and returns the correct sale price", () => {
+        //Arrange
+        const productIdentifierA = "A";
+        const expectedPrice = 130;
+
+        //Act
+        testCheckout.scan(productIdentifierA);
+        testCheckout.scan(productIdentifierA);
+        testCheckout.scan(productIdentifierA);
         const result = testCheckout.checkout();
 
         //Assert
