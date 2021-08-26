@@ -15,11 +15,9 @@ class Checkout {
         let totalPrice = 0;
 
         for (const productIdentifier in this.basket) {
-
             let quantityOfProduct = this.basket[productIdentifier];
             
             if (this.specialOffers[productIdentifier]) {
-                
                 const specialOfferUnits = Math.floor(quantityOfProduct / this.specialOffers[productIdentifier].numberInOffer);
 
                 const specialOfferPrice = specialOfferUnits * this.specialOffers[productIdentifier].priceOfOffer;

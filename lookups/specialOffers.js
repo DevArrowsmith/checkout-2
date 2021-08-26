@@ -1,4 +1,3 @@
-
 const specialOffers = {
     A: {
         numberInOffer: 3,

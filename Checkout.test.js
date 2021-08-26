@@ -1,6 +1,6 @@
-const Checkout = require("./index");
-const prices = require("./prices");
-const specialOffers = require("./specialOffers");
+const Checkout = require("./Checkout");
+const prices = require("./lookups/prices");
+const specialOffers = require("./lookups/specialOffers");
 
 describe("Checkout", () => {
 
