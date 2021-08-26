@@ -13,23 +13,23 @@ class Checkout {
 
     checkout () {
         let totalPrice = 0;
+
         for (const productIdentifier in this.basket) {
+
+            let quantityOfProduct = this.basket[productIdentifier];
             
             if (this.specialOffers[productIdentifier]) {
                 
-                const specialOfferUnits = Math.floor(this.basket[productIdentifier] / this.specialOffers[productIdentifier].numberInOffer);
+                const specialOfferUnits = Math.floor(quantityOfProduct / this.specialOffers[productIdentifier].numberInOffer);
 
                 const specialOfferPrice = specialOfferUnits * this.specialOffers[productIdentifier].priceOfOffer;
 
-                const singleUnits = this.basket[productIdentifier] - (specialOfferUnits * this.specialOffers[productIdentifier].numberInOffer);
-                const singleUnitsPrice = singleUnits * this.prices[productIdentifier];
+                totalPrice += specialOfferPrice;
 
-                totalPrice += (singleUnitsPrice + specialOfferPrice);
+                quantityOfProduct -= specialOfferUnits * this.specialOffers[productIdentifier].numberInOffer;
             };
 
-            if (!this.specialOffers[productIdentifier]) {
-                totalPrice += this.basket[productIdentifier] * this.prices[productIdentifier];
-            };
+            totalPrice += quantityOfProduct * this.prices[productIdentifier];
         };
         return totalPrice;
     }
